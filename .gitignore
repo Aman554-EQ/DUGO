@@ -1,0 +1,11 @@
+# Allow-list: only the files GitHub Pages needs are pushed.
+# Everything else (documentation/, soul.md, README.md, LaTeX source, big_data.jpg) stays local.
+/*
+!/index.html
+!/static/
+!/.nojekyll
+!/.gitignore
+
+# OS / editor noise
+Thumbs.db
+.DS_Store

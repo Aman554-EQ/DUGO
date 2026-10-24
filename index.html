@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--
+  DUGO project page — Aman554-EQ.github.io/DUGO
+  Every section is wrapped in  MODULE: <name>  /  END MODULE: <name>  markers.
+  Placeholder links are marked  PLACEHOLDER  and have an id="link-..." so you can search for them.
+  Before editing, read: documentation/navigation/NAVIGATION.md
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DUGO: Dual-Scale Gaussian Memory for Online Temporal Action Localization</title>
+  <meta name="description" content="DUGO: Dual-Scale Gaussian Memory for Online Temporal Action Localization in Egocentric Procedural Videos. IEEE BigData 2026.">
+  <meta name="keywords" content="DUGO, Online Temporal Action Localization, OnTAL, Egocentric Vision, Gaussian Memory, EGTEA, EPIC-Kitchens-100, MUSES">
+
+  <!-- Social preview (Open Graph). Update og:url if the site address changes. -->
+  <meta property="og:title" content="DUGO: Dual-Scale Gaussian Memory for Online Temporal Action Localization">
+  <meta property="og:description" content="Dual-scale temporal encoding and a twice-injected stochastic Gaussian memory for online action localization in egocentric procedural videos.">
+  <meta property="og:image" content="https://aman554-eq.github.io/DUGO/static/images/dugo_architecture.png">
+  <meta property="og:url" content="https://aman554-eq.github.io/DUGO/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23b85400'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' text-anchor='middle' fill='white'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- ================= MODULE: header ================= -->
+    <img src="static/images/bigdata_logo.jpg" alt="IEEE BigData 2026, Dec 14–17, 2026, Phoenix, Arizona" class="venue-logo">
+
+    <span class="venue-badge">IEEE BigData 2026 &middot; Vision Paper</span>
+
+    <h1><span class="acronym">DUGO</span>: <u>Du</u>al-Scale <u>G</u>aussian Memory for <u>O</u>nline Temporal Action Localization in Egocentric Procedural Videos</h1>
+
+    <div class="authors">
+      <!-- Author homepage links are PLACEHOLDERS (href="#"). Replace with real profile URLs. -->
+      <p>
+        <strong><a href="#" id="author-1">Mohammed Aman Bhuiyan</a></strong><sup>1</sup>,
+        <strong><a href="#" id="author-2">Md. Sazzad Hossain Adib</a></strong><sup>1</sup>,
+        <strong><a href="#" id="author-3">Samiul Basir Bhuiyan</a></strong><sup>1</sup>,
+        <strong><a href="#" id="author-4">Mir Faiyaz Hossain</a></strong><sup>1</sup>,
+      </p>
+      <p>
+        <strong><a href="#" id="author-5">Syed Mohammed Shamsul Islam</a></strong><sup>2</sup>,
+        <strong><a href="#" id="author-6">Md Zakir Hossain</a></strong><sup>3</sup>,
+        <strong><a href="#" id="author-7">Shafin Rahman</a></strong><sup>1</sup>
+      </p>
+      <p class="affiliations">
+        <sup>1</sup><a href="https://www.northsouth.edu/" target="_blank" rel="noopener noreferrer">Department of ECE, North South University, Dhaka, Bangladesh</a><br>
+        <sup>2</sup><a href="https://www.ecu.edu.au/" target="_blank" rel="noopener noreferrer">School of Science, Edith Cowan University, Australia</a><br>
+        <sup>3</sup><a href="https://www.unsw.edu.au/" target="_blank" rel="noopener noreferrer">School of Systems and Computing, University of New South Wales, Australia</a>
+      </p>
+    </div>
+    <!-- ================= END MODULE: header ================= -->
+
+
+    <!-- ================= MODULE: links ================= -->
+    <!-- arXiv, PDF, Code and Datasets are PLACEHOLDERS. Replace the href values. -->
+    <div class="links">
+      <a id="link-arxiv" href="https://arxiv.org/abs/2610.00000" target="_blank" rel="noopener noreferrer"><i class="ai ai-arxiv"></i>arXiv</a>
+      <a id="link-pdf" href="https://arxiv.org/pdf/2610.00000" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i>PDF</a>
+      <a id="link-video" href="#video"><i class="fab fa-youtube"></i>Video</a>
+      <a id="link-code" href="https://github.com/Aman554-EQ/DUGO-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>Code</a>
+      <a id="link-datasets" href="https://drive.google.com/drive/folders/DUGO-DATASETS-PLACEHOLDER" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i>Datasets</a>
+      <a id="link-bibtex" href="#bibtex"><i class="fas fa-quote-right"></i>BibTeX</a>
+    </div>
+    <!-- ================= END MODULE: links ================= -->
+
+
+    <!-- ================= MODULE: highlights ================= -->
+    <section id="highlights">
+      <h2>Highlights</h2>
+      <p>
+        We introduce <strong>DUGO</strong> (<strong>Du</strong>al-Scale Encoding and <strong>G</strong>aussian Memory <strong>O</strong>nline), an online temporal action localization framework that detects actions in streaming video as they happen.
+        It pairs a <strong>Dual-Scale Temporal Encoder</strong> with a <strong>Gaussian Memory Bank</strong> that injects stochastic procedural memory at two stages of the pipeline. DUGO sets a new state of the art on egocentric procedural benchmarks and also improves on a non-egocentric one.
+      </p>
+      <div class="highlights">
+        <div class="highlight-card">
+          <span class="value">24.3%</span>
+          <span class="label">Avg mAP on EGTEA, +2.8 over HAT</span>
+        </div>
+        <div class="highlight-card">
+          <span class="value">16.6%</span>
+          <span class="label">Avg mAP on EPIC-Kitchens-100, +1.3 over HAT</span>
+        </div>
+        <div class="highlight-card">
+          <span class="value">14.9%</span>
+          <span class="label">Avg mAP on MUSES (non-egocentric), best among online methods</span>
+        </div>
+        <div class="highlight-card">
+          <span class="value text">Gaussian memory</span>
+          <span class="label">Stochastic, input-conditioned prototypes, injected twice</span>
+        </div>
+        <div class="highlight-card">
+          <span class="value">48%</span>
+          <span class="label">Fewer parameters than HAT (129M vs 247M), real-time at 40 FPS</span>
+        </div>
+      </div>
+    </section>
+    <!-- ================= END MODULE: highlights ================= -->
+
+
+    <!-- ================= MODULE: abstract ================= -->
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Online Temporal Action Localization (OnTAL) aims to detect and localize action instances from untrimmed streaming videos in real time. Unlike offline approaches, OnTAL models have no access to future frames and cannot go back and refine earlier predictions, which makes the task considerably harder given the strict real-time constraints and narrow temporal window available. Most existing OnTAL methods lean on either brief anchor-based context or a single-scale memory of past frames, which limits how well they can capture actions unfolding across multiple time scales or requiring long-range reasoning in procedural videos. To address these gaps, we present DUGO (Dual-Scale Encoding and Gaussian Memory Online), a new OnTAL framework that jointly models local motion dynamics and long-range temporal dependencies. At its core, DUGO uses a Dual-Scale Temporal Encoder, pairing depth-wise local representations with global self-attention so it can pick up both fine-grained temporal patterns and broader contextual cues. We also introduce a Gaussian Memory Bank, which represents action memory as stochastic, input-conditioned Gaussian prototypes, allowing for richer temporal memory through gated cross-attention applied at both the encoder and anchor-query stages. Extensive experiments on procedural egocentric datasets (EGTEA, EPIC-Kitchens-100) demonstrate that DUGO achieves state-of-the-art performance while also providing strong improvements on a non-egocentric benchmark.
+      </p>
+    </section>
+    <!-- ================= END MODULE: abstract ================= -->
+
+
+    <!-- ================= MODULE: video ================= -->
+    <!-- To embed a real YouTube video, put its ID in data-youtube-id (e.g. data-youtube-id="dQw4w9WgXcQ").
+         While empty, the poster below is shown and links to the PLACEHOLDER URL in id="link-video-poster". -->
+    <section id="video">
+      <h2>Video</h2>
+      <div class="video-frame" id="video-frame" data-youtube-id="">
+        <a class="video-poster" id="link-video-poster" href="https://www.youtube.com/watch?v=DUGO-PLACEHOLDER" target="_blank" rel="noopener noreferrer">
+          <span class="play"><i class="fas fa-play"></i></span>
+          <span class="caption">Watch the DUGO overview</span>
+        </a>
+      </div>
+      <p class="video-note">Paper summary video.</p>
+    </section>
+    <!-- ================= END MODULE: video ================= -->
+
+
+    <!-- ================= MODULE: motivation ================= -->
+    <section id="motivation">
+      <h2>Motivation</h2>
+      <p>
+        Egocentric procedural videos ask three things of every frame at once: <strong>fine hand-motion discrimination</strong> (open, take, transfer and close look alike), <strong>memory of previous steps</strong> (cut comes after wash), and <strong>procedure awareness</strong> (each frame's role in the overall task).
+        Prior OnTAL methods rely on single-scale encoding with absent or one-shot deterministic memory. DUGO introduces dual-scale encoding and a twice-injected stochastic Gaussian memory that preserves multi-modal procedural ambiguity.
+      </p>
+      <figure>
+        <img src="static/images/dugo_motivation.png" alt="Motivation: egocentric procedural sequences, existing approaches with single-scale encoding and fixed deterministic memory, versus DUGO with dual-scale encoding and stochastic Gaussian memory">
+        <figcaption><strong>Motivation.</strong> Existing approaches use single-scale, narrow-window encoding and a memory that is absent or collapsed to one fixed point. DUGO encodes at two scales and injects a stochastic Gaussian memory twice.</figcaption>
+      </figure>
+    </section>
+    <!-- ================= END MODULE: motivation ================= -->
+
+
+    <!-- ================= MODULE: method ================= -->
+    <section id="method">
+      <h2>DUGO Framework</h2>
+      <p>
+        At each timestamp, a sliding window of RGB and optical-flow features from a pretrained backbone (I3D or SlowFast) is projected, concatenated and positionally encoded.
+        The <strong>Dual-Scale Temporal Encoder</strong> turns this window into an encoder memory that captures both short motion cues and window-wide context.
+        The <strong>Gaussian Memory Bank</strong> then summarizes that memory into a set of Gaussian prototypes and injects them twice: once into the encoder memory before decoding, and once into the decoded anchor features.
+        Classification and regression heads produce proposals, which an Online Suppression Network (ONMS) filters in a streaming-compatible way.
+      </p>
+
+      <figure class="figure-padded">
+        <img src="static/images/dugo_architecture.png" alt="DUGO architecture: feature extraction, Dual-Scale Temporal Encoder, Gaussian Memory Bank with two GMB passes, transformer decoder, classification and regression heads, and online suppression network">
+        <figcaption><strong>DUGO architecture.</strong> DSE replaces the single-granularity encoder with two branches: depthwise temporal convolutions for local modeling and self-attention for global temporal reasoning, fused by a learned projection. GMB replaces deterministic history compression with a stochastic mixture of Gaussian prototypes, injected at two stages through per-head gated cross-attention: encoder memory refinement (Pass 1) and decoded anchor query enhancement (Pass 2).</figcaption>
+      </figure>
+
+      <div class="module-grid">
+        <div class="module-card">
+          <h4>Dual-Scale Temporal Encoder (DSE)</h4>
+          <p>A depthwise 1D convolution branch (kernel 5) keeps subtle, few-frame cues such as wrist rotations and grip changes. A Transformer self-attention branch on top relates every frame to the whole window. A learned projection fuses the two before the main encoder.</p>
+        </div>
+        <div class="module-card">
+          <h4>Gaussian Memory Bank (GMB)</h4>
+          <p>The encoder memory is pooled (attention, mean and max) into a context vector that adapts K<sub>g</sub>&nbsp;=&nbsp;8 learnable Gaussian prototypes. Samples are drawn with the reparameterization trick and stacked into a memory bank, so each prototype stays an addressable memory slot.</p>
+        </div>
+        <div class="module-card">
+          <h4>Two-stage gated injection</h4>
+          <p>The same bank is injected via per-head gated cross-attention, first into the encoder memory (Pass 1) and then into the decoded anchors (Pass 2). Sharing it adds no extra parameters. Each head learns how much procedural memory to use.</p>
+        </div>
+        <div class="module-card">
+          <h4>1D DIoU regression loss</h4>
+          <p>Alongside L1 offsets, a 1D Distance-IoU loss on the decoded segment maximizes temporal overlap and penalizes center misalignment, tightening action boundaries.</p>
+        </div>
+      </div>
+
+      <h3>Key contributions</h3>
+      <ol class="contrib-list">
+        <li><strong>DUGO architecture.</strong> A new OnTAL framework that combines dual-scale temporal encoding with stochastic procedural memory, capturing fine-grained motion and long-range procedural dependencies while keeping past context.</li>
+        <li><strong>1D DIoU loss for OnTAL.</strong> Jointly optimizes temporal overlap and center alignment in the regression head, reducing localization error.</li>
+        <li><strong>State of the art under the online constraint.</strong> New best results on EGTEA and EPIC-Kitchens-100, plus consistent gains on the non-egocentric MUSES benchmark.</li>
+      </ol>
+    </section>
+    <!-- ================= END MODULE: method ================= -->
+
+
+    <!-- ================= MODULE: results ================= -->
+    <!-- All numbers copied from BigData2026_DUGO__Latex_code_files/main.tex (Tables I–IV + efficiency paragraph). -->
+    <section id="results">
+      <h2>Results</h2>
+
+      <div class="result-callout">
+        DUGO reaches <strong>24.3%</strong> avg mAP on EGTEA and <strong>16.6%</strong> on EPIC-Kitchens-100, beating the strongest prior OnTAL method (HAT) by <strong>+2.8</strong> and <strong>+1.3</strong>. The gains hold at every tIoU threshold and are largest at the lower thresholds.
+      </div>
+
+      <h3>Procedural egocentric benchmarks: mAP (%) at tIoU</h3>
+      <div class="results-table-wrap">
+        <table class="results">
+          <thead>
+            <tr class="group">
+              <th></th>
+              <th colspan="6" class="split">EGTEA</th>
+              <th colspan="6" class="split">EPIC-Kitchens-100</th>
+            </tr>
+            <tr>
+              <th>Method</th>
+              <th class="split">0.1</th><th>0.2</th><th>0.3</th><th>0.4</th><th>0.5</th><th>Avg</th>
+              <th class="split">0.1</th><th>0.2</th><th>0.3</th><th>0.4</th><th>0.5</th><th>Avg</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MATR</td>
+              <td class="split">21.5</td><td>19.5</td><td>15.9</td><td>12.6</td><td>8.6</td><td>15.6</td>
+              <td class="split">17.2</td><td>14.9</td><td>12.8</td><td>10.0</td><td>8.7</td><td>12.7</td>
+            </tr>
+            <tr>
+              <td>OAT</td>
+              <td class="split">24.9</td><td>23.1</td><td>20.6</td><td>17.1</td><td>12.2</td><td>19.6</td>
+              <td class="split">17.8</td><td>16.3</td><td>14.3</td><td>12.8</td><td>10.1</td><td>14.2</td>
+            </tr>
+            <tr>
+              <td>HAT</td>
+              <td class="split">27.5</td><td>25.4</td><td>22.6</td><td>18.3</td><td>13.5</td><td>21.5</td>
+              <td class="split">18.3</td><td>17.0</td><td>15.8</td><td>13.9</td><td>11.5</td><td>15.3</td>
+            </tr>
+            <tr class="ours">
+              <td>DUGO (Ours)</td>
+              <td class="split">30.9</td><td>28.8</td><td>25.6</td><td>21.1</td><td>14.9</td><td>24.3</td>
+              <td class="split">20.1</td><td>18.9</td><td>17.0</td><td>15.0</td><td>11.7</td><td>16.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="results-table-grid">
+        <div>
+          <h3>MUSES (non-egocentric): mAP (%)</h3>
+          <div class="results-table-wrap">
+            <table class="results">
+              <thead>
+                <tr><th>Method</th><th>0.3</th><th>0.4</th><th>0.5</th><th>0.6</th><th>0.7</th><th>Avg</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>CAG-QIL</td><td>8.5</td><td>6.5</td><td>4.2</td><td>2.8</td><td>1.9</td><td>4.8</td></tr>
+                <tr><td>OAT</td><td>16.7</td><td>13.0</td><td>10.0</td><td>6.3</td><td>3.2</td><td>9.8</td></tr>
+                <tr><td>HAT</td><td>19.1</td><td>14.7</td><td>10.1</td><td>6.3</td><td>3.7</td><td>10.8</td></tr>
+                <tr><td>MATR</td><td>23.5</td><td>19.3</td><td>14.3</td><td>9.4</td><td class="best">5.7</td><td>14.4</td></tr>
+                <tr class="ours"><td>DUGO (Ours)</td><td>24.7</td><td>20.0</td><td>15.5</td><td>9.8</td><td>4.5</td><td>14.9</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-caption">MATR keeps a slight edge at the strictest threshold (tIoU 0.7).</p>
+        </div>
+        <div>
+          <h3>Component ablation on EGTEA: mAP (%)</h3>
+          <div class="results-table-wrap">
+            <table class="results">
+              <thead>
+                <tr><th>DSE</th><th>DIoU</th><th>GMB</th><th>0.1</th><th>0.3</th><th>0.5</th><th>Avg</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>–</td><td>–</td><td>–</td><td>24.9</td><td>20.6</td><td>12.2</td><td>19.6</td></tr>
+                <tr><td>–</td><td>–</td><td>✓</td><td>29.2</td><td>24.0</td><td>12.7</td><td>22.2</td></tr>
+                <tr><td>✓</td><td>✓</td><td>–</td><td>29.1</td><td>24.5</td><td>15.1</td><td>23.4</td></tr>
+                <tr><td>✓</td><td>–</td><td>✓</td><td>28.5</td><td>23.9</td><td>14.5</td><td>22.7</td></tr>
+                <tr class="ours"><td>✓</td><td>✓</td><td>✓</td><td>30.9</td><td>25.6</td><td>14.9</td><td>24.3</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-caption">The first row is the OAT baseline. All three components together add +4.7 avg mAP.</p>
+        </div>
+      </div>
+
+      <h3>Efficiency and early detection</h3>
+      <div class="results-table-wrap">
+        <table class="results">
+          <thead>
+            <tr><th>Method</th><th>FPS ↑</th><th>AEDT (s) ↓</th><th>Params (M) ↓</th><th>GFLOPs ↓</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>OAT</td><td class="best">85.27</td><td class="best">−1.28</td><td class="best">92.43</td><td class="best">5.545</td></tr>
+            <tr><td>HAT</td><td>42.7</td><td>−1.14</td><td>247.10</td><td>6.435</td></tr>
+            <tr class="ours"><td>DUGO (Ours)</td><td>40.2</td><td>−1.02</td><td>129.22</td><td>7.755</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">AEDT (Average Early Detected Time) is how many seconds before an action ends a correct prediction is made; more negative means earlier. DUGO uses about half of HAT's parameters, stays real-time, and still detects actions more than a second before they finish.</p>
+
+      <figure class="figure-half">
+        <img src="static/images/kg_ablation.png" alt="Effect of the number of Gaussian prototypes K_g on EGTEA and EPIC-Kitchens-100 across tIoU thresholds">
+        <figcaption><strong>Number of Gaussian prototypes.</strong> Performance rises with more prototypes and peaks at K<sub>g</sub>&nbsp;=&nbsp;8 on both EGTEA and EPIC-Kitchens-100. Using more prototypes fragments the feature space and slightly hurts generalization.</figcaption>
+      </figure>
+    </section>
+    <!-- ================= END MODULE: results ================= -->
+
+
+    <!-- ================= MODULE: bibtex ================= -->
+    <!-- PLACEHOLDER citation: update booktitle / pages / year once proceedings are final. -->
+    <section id="bibtex">
+      <div class="bibtex-header">
+        <h2>BibTeX</h2>
+        <button type="button" class="copy-bibtex" id="copy-bibtex-btn" aria-label="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i><span>Copy</span>
+        </button>
+      </div>
+      <pre class="bibtex" id="bibtex-content">@inproceedings{bhuiyan2026dugo,
+  title     = {DUGO: Dual-Scale Gaussian Memory for Online Temporal Action Localization in Egocentric Procedural Videos},
+  author    = {Mohammed Aman Bhuiyan, Md. Sazzad Hossain Adib, Samiul Basir Bhuiyan, Mir Faiyaz Hossain, Syed Mohammed Shamsul Islam, Md Zakir Hossain, Shafin Rahman},
+  booktitle = {Proceedings of the IEEE International Conference on Big Data (BigData)},
+  year      = {2026}
+}</pre>
+    </section>
+    <!-- ================= END MODULE: bibtex ================= -->
+
+
+    <!-- ================= MODULE: acknowledgement ================= -->
+    <!-- PLACEHOLDER text: the paper has no acknowledgement section yet. Add funding / grant details here. -->
+    <section id="acknowledgement">
+      <h2>Acknowledgement</h2>
+      <p>
+        We thank the creators of EGTEA Gaze+, EPIC-Kitchens-100 and MUSES for making their datasets publicly available, and the online action understanding community whose open research made this work possible.
+      </p>
+    </section>
+    <!-- ================= END MODULE: acknowledgement ================= -->
+
+
+    <!-- ================= MODULE: footer ================= -->
+    <footer>
+      &copy; 2026 the DUGO authors. 
+    </footer>
+    <!-- ================= END MODULE: footer ================= -->
+
+  </div>
+  <script src="static/js/main.js"></script>
+</body>
+</html>
