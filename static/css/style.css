@@ -116,6 +116,36 @@ h1 u {
   text-decoration: underline;
 }
 
+.affiliation-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  margin: -0.25rem 0 2rem;
+}
+
+.affiliation-logos a {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.affiliation-logos sup {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.affiliation-logos img { width: auto; display: block; }
+/* Heights balance the logos' different shapes (round crest vs. wide wordmarks). */
+.affiliation-logos .logo-nsu    { height: 60px; }
+.affiliation-logos .logo-ecu    { height: 52px; }
+.affiliation-logos .logo-uwa    { height: 44px; }
+.affiliation-logos .logo-curtin { height: 26px; }
+.affiliation-logos .logo-unsw   { height: 44px; }
+
 /* ---------- Link buttons ---------- */
 
 .links {
@@ -506,6 +536,12 @@ footer {
 @media (max-width: 600px) {
   .page { padding: 2rem 1rem 3rem; }
   .venue-logo { height: 7rem; }
+  .affiliation-logos { gap: 1rem 1.25rem; }
+  .affiliation-logos .logo-nsu    { height: 46px; }
+  .affiliation-logos .logo-ecu    { height: 40px; }
+  .affiliation-logos .logo-uwa,
+  .affiliation-logos .logo-unsw   { height: 34px; }
+  .affiliation-logos .logo-curtin { height: 22px; }
   .links a { padding: 0.45rem 0.75rem; font-size: 0.85rem; }
   .results-table-grid,
   .module-grid { grid-template-columns: 1fr; }
